@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DIR=$(pwd)
+[ $(basename $DIR) == 'bin' ] && echo "Don't run in bin" && exit -1  
+
+IMAGE="tickets_tew"
+[ "$(docker images | grep "$IMAGE")" == "" ] && docker build -t $IMAGE .
+
+docker run -itP -v $DIR:/app $IMAGE $1
+
