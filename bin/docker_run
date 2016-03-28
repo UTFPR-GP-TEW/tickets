@@ -6,5 +6,5 @@ DIR=$(pwd)
 IMAGE="tickets_tew"
 [ "$(docker images | grep "$IMAGE")" == "" ] && docker build -t $IMAGE .
 
-docker run -itP -v $DIR:/app $IMAGE $1
+docker run -itP -p 3000:3000 -v $DIR:/app $IMAGE $1
 
