@@ -1,5 +1,11 @@
 FROM ruby:2.2 
 
+# SET ENV Gems
+# --- Add this to your Dockerfile ---
+ENV BUNDLE_GEMFILE=/app/Gemfile \
+  BUNDLE_JOBS=2 \
+  BUNDLE_PATH=/app/.bundle
+
 # Install apt based dependencies required to run Rails as 
 # well as RubyGems. As the Ruby image itself is based on a 
 # Debian image, we use apt-get to install those.
