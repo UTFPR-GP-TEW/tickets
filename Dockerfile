@@ -19,14 +19,15 @@ ENV BUNDLE_GEMFILE=/app/Gemfile \
   BUNDLE_APP_CONFIG=/app/.bundle \
   PATH=$PATH:/app/.bundle/bin \
   GEM_HOME=/app/.bundle \
-  BUNDLE_PATH=/app/.bundle
+  BUNDLE_PATH=/app/.bundle \
+  BUNDLE_BIN=/app/.bundle
 
 # Copy the Gemfile as well as the Gemfile.lock and install 
 # the RubyGems. This is a separate step so the dependencies 
 # will be cached unless changes to one of those two files 
 # are made.
-COPY Gemfile Gemfile.lock ./ 
-RUN gem install bundler && bundle install --jobs 20 --retry 5
+#COPY Gemfile Gemfile.lock ./ 
+#RUN gem install bundler && bundle install --jobs 20 --retry 5
 
 # Copy the main application.
 COPY . ./
