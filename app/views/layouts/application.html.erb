@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Tickets</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <title>Tickets</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+    <div class="ui left visible vertical inverted sidebar labeled icon menu">
+        <a class="item">
+            <i class="home icon"></i>
+            Home
+        </a>
+            <a class="item">
+            <i class="ticket icon"></i>
+            Tickets
+        </a>
+        <a class="item">
+            <i class="folder icon"></i>
+            Projetos
+        </a>
+        <a class="item">
+            <i class="user icon"></i>
+            Usuários
+        </a>
+    </div>
+    <div class="ui secondary menu black inverted segment">
+        <div class="ui container">
+
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+                <a class="ui item">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+        <div class="ui container">
+            <%= yield %>
+        </div>
+
+</main>
+
+<footer class="ui inverted vertical footer segment black">
+    <div class="ui three column doubling stackable grid container">
+        <div class="column">
+                <p></p>
+                <p></p>
+        </div>
+        <div class="column">
+            <p>logo</p>
+        </div>
+        <div class="column">
+            <p>copyright</p>
+        </div>
+    </div>
+</footer>
+
 
 </body>
 </html>

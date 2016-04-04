@@ -15,3 +15,20 @@
  */
 
 @import "semantic-ui";
+
+
+body{
+    header{
+        .secondary{
+            margin-top: 0 !important;
+            margin-left: 84px !important;
+        }
+    }
+    main{
+        margin-left: 84px;
+        min-height: calc(100vh - 86px);
+    }
+    footer{
+        margin-left: 84px;
+    }
+}
