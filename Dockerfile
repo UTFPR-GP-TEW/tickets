@@ -21,6 +21,8 @@ ENV BUNDLE_GEMFILE=/app/Gemfile \
   GEM_HOME=/app/.bundle \
   BUNDLE_PATH=/app/.bundle \
   BUNDLE_BIN=/app/.bundle
+  RAILS_ENV=development \
+  RACK_ENV=development
 
 # Copy the Gemfile as well as the Gemfile.lock and install 
 # the RubyGems. This is a separate step so the dependencies 
