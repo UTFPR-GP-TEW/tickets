@@ -1,0 +1,10 @@
+language: ruby
+env:
+  global:
+    - TRAVIS=true
+rvm:
+  - 2.2
+script: "bundle exec rake $TASK --trace"
+notifications:
+  email: false
+
