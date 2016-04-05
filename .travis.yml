@@ -4,7 +4,7 @@ env:
     - TRAVIS=true
 rvm:
   - 2.2
-script: "bundle exec rake $TASK --trace"
+#script: "bundle exec rake $TASK --trace"
 notifications:
   email: false
 
