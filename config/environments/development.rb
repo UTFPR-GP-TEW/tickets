@@ -41,4 +41,7 @@ Rails.application.configure do
 
   # definindo opções de URL para o ambiente do projeto.
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # definindo linguagem da aplicação
+  config.i18n.default_locale = :"pt-BR"
 end
