@@ -20,7 +20,7 @@ ENV BUNDLE_GEMFILE=/app/Gemfile \
   PATH=$PATH:/app/.bundle/bin \
   GEM_HOME=/app/.bundle \
   BUNDLE_PATH=/app/.bundle \
-  BUNDLE_BIN=/app/.bundle
+  BUNDLE_BIN=/app/.bundle \
   RAILS_ENV=development \
   RACK_ENV=development
 
