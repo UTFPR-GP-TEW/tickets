@@ -49,7 +49,7 @@ group :development do
   gem 'spring'
 end
 
-gem 'devise'
+gem 'devise', '~> 3.5', '>= 3.5.6'
 
 # for win repport
 gem 'tzinfo-data'
