@@ -10,18 +10,12 @@
 
 <header>
     <div class="ui left visible vertical inverted sidebar labeled icon menu">
-        <a href="/" class="item">
-            <i class="home icon"></i>
-            Home
-        </a>
-            <a class="item">
+        <%= link_to '<i class="home icon"></i>Home'.html_safe, root_path, class: 'item' %>
+        <a class="item">
             <i class="ticket icon"></i>
             Tickets
         </a>
-        <a href="/projects" class="item">
-            <i class="folder icon"></i>
-            Projetos
-        </a>
+        <%= link_to '<i class="folder icon"></i>Projetos'.html_safe, projects_path, class: 'item' %>
         <a class="item">
             <i class="user icon"></i>
             Usuários
