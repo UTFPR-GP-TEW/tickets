@@ -7,34 +7,31 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
-
 <header>
-    <div class="ui left visible vertical inverted sidebar labeled icon menu">
-        <a class="item">
-            <i class="home icon"></i>
-            Home
-        </a>
-            <a class="item">
-            <i class="ticket icon"></i>
-            Tickets
-        </a>
-        <a class="item">
-            <i class="folder icon"></i>
-            Projetos
-        </a>
-        <a class="item">
-            <i class="user icon"></i>
-            Usuários
-        </a>
-    </div>
-    <div class="ui secondary menu black inverted segment">
+    <div class="ui menu black inverted segment">
         <div class="ui container">
-
+            <a class="item">
+                <i class="home icon"></i>
+                Home
+            </a>
+            <a class="item">
+                <i class="ticket icon"></i>
+                Tickets
+            </a>
+            <a class="item">
+                <i class="folder icon"></i>
+                Projetos
+            </a>
+            <a class="item">
+                <i class="user icon"></i>
+                Usuários
+            </a>
             <div class="right menu">
                 <div class="item">
                     <div class="ui icon input">
                         <input type="text" placeholder="Search...">
-                        <i class="search link icon"></i>
+                        <i class="search link icon">
+                        </i>
                     </div>
                 </div>
                 <a class="ui item">
@@ -49,28 +46,21 @@
     <p class="alert"><%= alert %></p>
 
 <main>
-
-        <div class="ui container">
-            <%= yield %>
-        </div>
-
+    <div class="ui container">
+        <%= yield %>
+    </div>
 </main>
 
 <footer class="ui inverted vertical footer segment black">
     <div class="ui three column doubling stackable grid container">
         <div class="column">
-                <p></p>
-                <p></p>
+            <img src="../../assets/logo.png" alt="" />
         </div>
+        <div class="column"></div>
         <div class="column">
-            <p>logo</p>
-        </div>
-        <div class="column">
-            <p>copyright</p>
+            <p>Copyright © 2016 TEW</p>
         </div>
     </div>
 </footer>
-
-
 </body>
 </html>
