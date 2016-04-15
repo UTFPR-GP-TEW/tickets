@@ -5,7 +5,9 @@
 
     <%= render 'form' %>
 
-    <%= link_to 'Voltar', tickets_path %>
+    <div class="ui compact menu">
+      <%= link_to '<i class="arrow left icon"></i> voltar'.html_safe, tickets_path, class: 'item' %>
+    </div>
   </div>
 </div>
 

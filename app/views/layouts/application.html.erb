@@ -14,10 +14,10 @@
                 <i class="home icon"></i>
                 Home
             </a>
-            <a class="item">
-                <i class="ticket icon"></i>
-                Tickets
-            </a>
+            <%= link_to tickets_path, class: 'item'  do %>
+              <i class="ticket icon"></i>
+              Tickets
+            <% end %>
             <a class="item">
                 <i class="folder icon"></i>
                 Projetos
