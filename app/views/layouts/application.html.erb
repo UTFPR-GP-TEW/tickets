@@ -22,10 +22,9 @@
                 <i class="folder icon"></i>
                 Projetos
             </a>
-            <a class="item">
-                <i class="user icon"></i>
-                Usuários
-            </a>
+
+            <%= link_to "<i class='user icon'></i> Criar Usuário".html_safe, new_user_registration_path, :class => 'item' %>
+
             <div class="right menu">
                 <div class="item">
                     <div class="ui icon input">
@@ -42,8 +41,8 @@
     </div>
 </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <main>
     <div class="ui container">
