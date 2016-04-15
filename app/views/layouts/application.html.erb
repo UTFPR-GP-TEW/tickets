@@ -26,16 +26,19 @@
             <%= link_to "<i class='user icon'></i> Criar Usuário".html_safe, new_user_registration_path, :class => 'item' %>
 
             <div class="right menu">
-                <div class="item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon">
-                        </i>
+                <% if user_signed_in? %>
+                    
+                    <div class="ui item">
+                        <small>Conectado como</small> &nbsp;
+                        &lt;<%= current_user.email %>&gt;
                     </div>
-                </div>
-                <a class="ui item">
-                    Logout
-                </a>
+
+                    <%= link_to "Editar Perfil", edit_user_registration_path, :class => 'ui item'  %>
+
+                    <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'ui item'  %>
+                <% else %>
+                    <%= link_to "Entrar", new_user_session_path, :class => 'ui item'  %>
+                <% end %>
             </div>
         </div>
     </div>
