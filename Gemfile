@@ -57,3 +57,7 @@ gem 'tzinfo-data'
 gem 'coffee-script-source', '1.8.0'
 gem 'bcrypt', '~> 3.1.8'
 
+group :production do
+  gem 'pg', '~> 0.18.4'
+end
+
