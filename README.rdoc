@@ -3,13 +3,13 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+==== Badges:
+* {<img src="https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/gpa.svg" />}[https://codeclimate.com/github/UTFPR-GP-TEW/tickets]
+* {<img src="https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/coverage.svg" />}[https://codeclimate.com/github/UTFPR-GP-TEW/tickets/coverage]
+* {<img src="https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/issue_count.svg" />}[https://codeclimate.com/github/UTFPR-GP-TEW/tickets]
+* {<img src="https://travis-ci.org/UTFPR-GP-TEW/tickets.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/UTFPR-GP-TEW/tickets]
 
-* Badges:
-[![Code Climate](https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/gpa.svg)](https://codeclimate.com/github/UTFPR-GP-TEW/tickets)
-[![Test Coverage](https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/coverage.svg)](https://codeclimate.com/github/UTFPR-GP-TEW/tickets/coverage)
-[![Issue Count](https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/issue_count.svg)](https://codeclimate.com/github/UTFPR-GP-TEW/tickets)
-[![Build Status](https://travis-ci.org/UTFPR-GP-TEW/tickets.svg?branch=master)](https://travis-ci.org/UTFPR-GP-TEW/tickets)
+==== Things you may want to cover:
 
 * Ruby version
 

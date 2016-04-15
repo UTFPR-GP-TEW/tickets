@@ -49,3 +49,8 @@ group :development do
   gem 'spring'
 end
 
+# for win repport
+gem 'tzinfo-data'
+gem 'coffee-script-source', '1.8.0'
+gem 'bcrypt', '~> 3.1.8'
+
