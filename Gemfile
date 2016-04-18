@@ -33,10 +33,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Semantic UI
 gem 'semantic-ui-sass', '~> 2.1', '>= 2.1.8.0'
 
+# Has Secure Token
+gem 'has_secure_token', '~> 1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  
+
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
@@ -55,4 +58,8 @@ gem 'devise', '~> 3.5', '>= 3.5.6'
 gem 'tzinfo-data'
 gem 'coffee-script-source', '1.8.0'
 gem 'bcrypt', '~> 3.1.8'
+
+group :production do
+  gem 'pg', '~> 0.18.4'
+end
 

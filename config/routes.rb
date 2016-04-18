@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   devise_for :users
 
+=======
+  resources :projects
+>>>>>>> 7ade4bcd11ab3cf28b75cf3e48be2001721fd45c
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
