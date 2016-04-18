@@ -8,19 +8,7 @@
 </head>
 <body>
 <header>
-    <div class="ui left visible vertical inverted sidebar labeled icon menu">
-        <%= link_to '<i class="home icon"></i>Home'.html_safe, root_path, class: 'item' %>
-        <a class="item">
-            <i class="ticket icon"></i>
-            Tickets
-        </a>
-        <%= link_to '<i class="folder icon"></i>Projetos'.html_safe, projects_path, class: 'item' %>
-        <a class="item">
-            <i class="user icon"></i>
-            Usuários
-        </a>
-    </div>
-    <div class="ui secondary menu black inverted segment">
+    <div class="ui menu black inverted segment">
         <div class="ui container">
             <a class="item">
                 <i class="home icon"></i>
@@ -30,10 +18,10 @@
               <i class="ticket icon"></i>
               Tickets
             <% end %>
-            <a class="item">
+            <%= link_to projects_path, class: 'item'  do %>
                 <i class="folder icon"></i>
                 Projetos
-            </a>
+            <% end %>
             <a class="item">
                 <i class="user icon"></i>
                 Usuários
