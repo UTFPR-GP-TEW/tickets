@@ -52,6 +52,9 @@ group :development do
   gem 'spring'
 end
 
+# Coveralls
+gem 'coveralls', require: false
+
 # for win repport
 gem 'tzinfo-data'
 gem 'coffee-script-source', '1.8.0'
