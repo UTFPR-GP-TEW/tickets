@@ -173,11 +173,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   coffee-script-source (= 1.8.0)
-<<<<<<< HEAD
   devise (~> 3.5, >= 3.5.6)
-=======
   has_secure_token (~> 1.0)
->>>>>>> 7ade4bcd11ab3cf28b75cf3e48be2001721fd45c
   jbuilder (~> 2.0)
   jquery-rails
   pg (~> 0.18.4)
