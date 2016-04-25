@@ -15,6 +15,7 @@
  */
 
 @import "semantic-ui";
+@import 'semantic-ui/modules/popup';
 
 
 body{
@@ -25,8 +26,9 @@ body{
         }
     }
     main{
+        overflow-x: hidden;
         margin-left: 84px;
-        min-height: calc(100vh - 86px);
+        min-height: calc(100vh - 144px);
     }
     footer{
         margin-left: 84px;
