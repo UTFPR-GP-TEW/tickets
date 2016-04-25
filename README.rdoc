@@ -8,6 +8,7 @@ application up and running.
 * {<img src="https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/coverage.svg" />}[https://codeclimate.com/github/UTFPR-GP-TEW/tickets/coverage]
 * {<img src="https://codeclimate.com/github/UTFPR-GP-TEW/tickets/badges/issue_count.svg" />}[https://codeclimate.com/github/UTFPR-GP-TEW/tickets]
 * {<img src="https://travis-ci.org/UTFPR-GP-TEW/tickets.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/UTFPR-GP-TEW/tickets]
+* {<img src="https://coveralls.io/repos/github/UTFPR-GP-TEW/tickets/badge.svg?branch=master" alt="Coverage Status" />}[https://coveralls.io/github/UTFPR-GP-TEW/tickets?branch=master]
 
 ==== Things you may want to cover:
 
