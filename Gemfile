@@ -54,6 +54,9 @@ end
 
 gem 'devise', '~> 3.5', '>= 3.5.6'
 
+# Coveralls
+gem 'coveralls', require: false
+
 # for win repport
 gem 'tzinfo-data'
 gem 'coffee-script-source', '1.8.0'
