@@ -1,33 +1,29 @@
 <%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+    <% if @project.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% @project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @project.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="ui form">
+      <div class="field">
+        <label><%= f.label 'Nome' %></label>
+        <%= f.text_field :name,class: 'ui input' %>
+      </div>
+      <div class="field">
+        <label><%= f.label 'Descrição' %></label>
+        <%= f.text_area :description, class: 'ui input' %>
+      </div>
+
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-<!--   <div class="field">
-    <%= f.label :token %><br>
-    <%= f.text_field :token %>
-  </div> -->
-<!--   <div class="field">
-    <%= f.label :parent_project_id %><br>
-    <%= f.number_field :parent_project_id %>
-  </div> -->
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "#{f.object.new_record? ? "Criar" : "Editar"} Projeto",class: 'ui secondary button'  %>
+    </div>
 <% end %>
