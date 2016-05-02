@@ -1,0 +1,37 @@
+<%= form_for([:admin, @ticket]) do |f| %>
+    <% if @ticket.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+          <ul>
+            <% @ticket.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="ui form">
+      <div class="field">
+        <label><%= f.label 'Titulo' %></label>
+        <%= f.text_field :title ,class: 'ui input' %>
+      </div>
+      <div class="field">
+        <label><%= f.label 'Descrição' %></label>
+        <%= f.text_area :description, class: 'ui input' %>
+      </div>
+      <div class="field">
+        <label><%= f.label 'Projeto' %></label>
+        <%= f.collection_select :project_id, Project.all, :id, :name, :include_blank => true %>
+      </div>
+
+      <div class="field">
+        <label><%= f.label 'Status' %></label>
+        <%= f.select(:status, Ticket.statuses.keys.map {|status| [status.titleize,status]}, :include_blank => true) %>
+      </div>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "#{@ticket.new_record? ? "Criar" : "Editar"} Ticket",class: 'ui secondary button'  %>
+    </div>
+<% end %>
