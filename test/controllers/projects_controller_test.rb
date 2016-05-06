@@ -36,8 +36,8 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should update project" do
     patch :update, id: @project, project: { name: 'Project Changed' }
-    assert_redirected_to project_path(assigns(:project))
     assert_equal 'Project Changed', Project.find(@project.id).name
+    assert_redirected_to project_path(assigns(:project))
   end
 
   test "should destroy project" do

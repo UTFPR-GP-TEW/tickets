@@ -6,58 +6,33 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
 </head>
+
 <body>
-<header>
-    <div class="ui menu black inverted segment">
+
+    <% if user_signed_in? %>
+        <%= render file: 'layouts/menus/admin' %>
+    <% else %>
+        <%= render file: 'layouts/menus/visitor' %>
+    <% end %>
+
+    <%= render file: 'layouts/flashes/devise' %>
+
+    <main>
         <div class="ui container">
-            <a class="item">
-                <i class="home icon"></i>
-                Home
-            </a>
-            <%= link_to admin_tickets_path, class: 'item'  do %>
-              <i class="ticket icon"></i>
-              Tickets
-            <% end %>
-            <%= link_to admin_projects_path, class: 'item'  do %>
-                <i class="folder icon"></i>
-                Projetos
-            <% end %>
-            <a class="item">
-                <i class="user icon"></i>
-                Usuários
-            </a>
-            <div class="right menu">
-                <div class="item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon">
-                        </i>
-                    </div>
-                </div>
-                <a class="ui item">
-                    Logout
-                </a>
+            <%= yield %>
+        </div>
+    </main>
+
+    <footer class="ui inverted vertical footer segment black">
+        <div class="ui three column doubling stackable grid container">
+            <div class="column">
+                <img src="../../assets/logo.png" alt="" />
+            </div>
+            <div class="column"></div>
+            <div class="column">
+                <p>Copyright © 2016 TEW</p>
             </div>
         </div>
-    </div>
-</header>
-
-<main>
-    <div class="ui container">
-        <%= yield %>
-    </div>
-</main>
-
-<footer class="ui inverted vertical footer segment black">
-    <div class="ui three column doubling stackable grid container">
-        <div class="column">
-            <img src="../../assets/logo.png" alt="" />
-        </div>
-        <div class="column"></div>
-        <div class="column">
-            <p>Copyright © 2016 TEW</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>

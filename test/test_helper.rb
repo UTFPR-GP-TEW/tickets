@@ -4,6 +4,10 @@ require 'coveralls'
 Coveralls.wear!('rails')
 require 'rails/test_help'
 
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all

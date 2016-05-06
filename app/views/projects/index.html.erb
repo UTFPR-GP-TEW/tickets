@@ -1,33 +1,43 @@
 <p id="notice"><%= notice %></p>
+<div class="ui grid centered">
+  <div class="ten wide column">
+    <div class="ui grid">
+      <div class="six wide column"><h1>Projetos</h1></div>
+      <div class="six wide column right floated"><%= link_to '<i class="plus icon"></i> Novo Projeto'.html_safe, new_project_path, class: 'ui secondary button right floated' %></div>
+    </div>
 
-<h1>Listing Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Token</th>
-      <th>Parent project</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<table class="ui celled table">
+      <thead>
+        <tr class="center aligned">
+          <th>#ID</th>
+          <th>Titulo</th>
+          <th>Descrição</th>
+          <th colspan="3"> Ações</th>
+        </tr>
+      </thead>
+      <tbody>
 
   <tbody>
     <% @projects.each do |project| %>
       <tr>
+        <td>
+          <div class="ui ribbon label"><%= project.id %></div>
+        </td>
         <td><%= project.name %></td>
         <td><%= project.description %></td>
-        <td><%= project.token %></td>
-        <td><%= project.parent_project_id %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="center aligned">
+              <div class="ui compact menu">
+                <%= link_to '<i class="unhide icon"></i> ver'.html_safe, project, class: 'item' %>
+                <%= link_to '<i class="write icon"></i> editar'.html_safe, edit_project_path(project), class: 'item' %>
+                <%= link_to '<i class="remove icon"></i> excluir'.html_safe, project, method: :delete, class: 'item', data: { confirm: 'Excluir projeto?' } %>
+              </div>
+            </td>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+      </tbody>
+    </table>
+  </div>
+  <div class="ten wide column">
+    <%= link_to '<i class="plus icon"></i> Novo Projeto'.html_safe, new_project_path, class: 'ui secondary button' %>
+  </div>
+</div>

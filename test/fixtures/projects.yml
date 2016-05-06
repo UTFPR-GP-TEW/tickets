@@ -2,7 +2,7 @@
 
 Project_1:
   name: Project TEST
-  description: TEST
+  description: TEST1
   token: SecureRandom.uuid
   parent_project_id: nil
 

@@ -1,6 +1,13 @@
-<h1>Editing Project</h1>
+<div class="ui grid centered">
+  <div class="ten wide column">
+    <br>
+    <h1>Editar Projeto</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
+    <div class="ui compact menu">
+      <%= link_to '<i class="arrow left icon"></i> voltar'.html_safe, projects_path, class: 'item' %>
+      <%= link_to '<i class="unhide icon"></i> Ver'.html_safe, @project, class: 'item' %>
+    </div>
+  </div>
+</div>

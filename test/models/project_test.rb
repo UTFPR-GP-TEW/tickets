@@ -6,7 +6,7 @@ class ProjectTest < ActiveSupport::TestCase
   end
 
   test "should not project create without name" do
-    assert_raises('ActiveRecord::StatementInvalid') do
+    assert_difference('Project.count', 0) do
       Project.create description: 'None', token: SecureRandom.uuid, parent_project_id: nil
     end
   end
