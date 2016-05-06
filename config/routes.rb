@@ -3,15 +3,18 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
-  resources :tickets
-  resources :projects
-  
-  devise_for :users
+  namespace :admin do
+    resources :tickets
+    resources :projects
+    root 'admin#index'
+  end
   get 'home/index'
+
+  devise_for :users
+
 
 end
