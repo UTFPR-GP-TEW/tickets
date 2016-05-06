@@ -5,6 +5,7 @@ Project_1:
   description: TEST1
   token: SecureRandom.uuid
   parent_project_id: nil
+  user: User1
 
 # Project_2:
 #  name: MyString

@@ -20,6 +20,10 @@
         <label><%= f.label 'Descrição' %></label>
         <%= f.text_area :description, class: 'ui input' %>
       </div>
+      <div class="field">
+        <label><%= f.label 'Usuário Responsável' %></label>
+        <%= f.collection_select :user_id, User.all, :id, :email %>
+      </div>
 
     </div>
     <br>
