@@ -18,7 +18,7 @@ class Admin::ProjectsControllerTest < ActionController::TestCase
 
   test "should create project" do
     assert_difference('Project.count') do
-      post :create, project: { description: 'Description Project Created', name: 'Project TEST', parent_project_id: nil, token: SecureRandom.uuid }
+      post :create, project: { description: 'Description Project Created', name: 'Project TEST', parent_project_id: nil, token: SecureRandom.uuid, user_id: 1 }
     end
 
     assert_redirected_to admin_project_path(assigns(:project))
