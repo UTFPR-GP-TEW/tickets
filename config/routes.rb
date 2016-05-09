@@ -10,9 +10,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :tickets
     resources :projects
-    root 'admin#index'
+    root 'home#index'
   end
   get 'home/index'
+
+  root 'home#index'
 
   devise_for :users
 
