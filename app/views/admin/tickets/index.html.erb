@@ -3,7 +3,7 @@
   <div class="ten wide column">
     <div class="ui grid">
       <div class="six wide column"><h1>Tickets</h1></div>
-      <div class="six wide column right floated"><%= link_to '<i class="plus icon"></i> Novo Ticket'.html_safe, new_ticket_path, class: 'ui secondary button right floated' %></div>
+      <div class="six wide column right floated"><%= link_to '<i class="plus icon"></i> Novo Ticket'.html_safe, new_admin_ticket_path, class: 'ui secondary button right floated' %></div>
     </div>
 
     <table class="ui celled table">
@@ -25,9 +25,9 @@
             <td><%= ticket.description %></td>
             <td class="center aligned">
               <div class="ui compact menu">
-                <%= link_to '<i class="unhide icon"></i> ver'.html_safe, ticket, class: 'item', data: {content: 'Add users to your feed'} %>
-                <%= link_to '<i class="write icon"></i> editar'.html_safe, edit_ticket_path(ticket), class: 'item', data:{content: 'Add users to your feed'} %>
-                <%= link_to '<i class="remove icon"></i> excluir'.html_safe, ticket, method: :delete, data: { confirm: 'Are you sure?', content: 'Add users to your feed' }, class: 'item' %>
+                <%= link_to '<i class="unhide icon"></i> ver'.html_safe, admin_ticket_path(ticket), class: 'item', data: {content: 'Add users to your feed'} %>
+                <%= link_to '<i class="write icon"></i> editar'.html_safe, edit_admin_ticket_path(ticket), class: 'item', data:{content: 'Add users to your feed'} %>
+                <%= link_to '<i class="remove icon"></i> excluir'.html_safe, admin_ticket_path(ticket), method: :delete, data: { confirm: 'Are you sure?', content: 'Add users to your feed' }, class: 'item' %>
               </div>
             </td>
           </tr>
@@ -36,7 +36,6 @@
     </table>
   </div>
   <div class="ten wide column">
-    <%= link_to '<i class="plus icon"></i> Novo Ticket'.html_safe, new_ticket_path, class: 'ui secondary button' %>
+    <%= link_to '<i class="plus icon"></i> Novo Ticket'.html_safe, new_admin_ticket_path, class: 'ui secondary button' %>
   </div>
 </div>
-

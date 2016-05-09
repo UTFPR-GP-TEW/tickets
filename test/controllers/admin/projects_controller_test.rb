@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProjectsControllerTest < ActionController::TestCase
+class Admin::ProjectsControllerTest < ActionController::TestCase
   setup do
     @project = projects(:Project_1)
   end
@@ -21,7 +21,7 @@ class ProjectsControllerTest < ActionController::TestCase
       post :create, project: { description: 'Description Project Created', name: 'Project TEST', parent_project_id: nil, token: SecureRandom.uuid, user_id: 1 }
     end
 
-    assert_redirected_to project_path(assigns(:project))
+    assert_redirected_to admin_project_path(assigns(:project))
   end
 
   test "should show project" do
@@ -37,7 +37,7 @@ class ProjectsControllerTest < ActionController::TestCase
   test "should update project" do
     patch :update, id: @project, project: { name: 'Project Changed' }
     assert_equal 'Project Changed', Project.find(@project.id).name
-    assert_redirected_to project_path(assigns(:project))
+    assert_redirected_to admin_project_path(assigns(:project))
   end
 
   test "should destroy project" do
@@ -45,6 +45,6 @@ class ProjectsControllerTest < ActionController::TestCase
       delete :destroy, id: @project
     end
 
-    assert_redirected_to projects_path
+    assert_redirected_to admin_projects_path
   end
 end

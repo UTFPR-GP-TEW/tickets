@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TicketsControllerTest < ActionController::TestCase
+class Admin::TicketsControllerTest < ActionController::TestCase
   setup do
     @ticket = tickets(:one)
   end
@@ -21,7 +21,7 @@ class TicketsControllerTest < ActionController::TestCase
       post :create, ticket: { description: @ticket.description, title: @ticket.title, status: 'aberto', project_id: 1}
     end
 
-    assert_redirected_to ticket_path(assigns(:ticket))
+    assert_redirected_to admin_ticket_path(assigns(:ticket))
   end
 
   test "should show ticket" do
@@ -37,7 +37,7 @@ class TicketsControllerTest < ActionController::TestCase
   test "should update ticket" do
     patch :update, id: @ticket, ticket: { description: @ticket.description, title: 'Update Ticket', status: 'aberto', project_id: 1}
     assert_equal 'Update Ticket', Ticket.find(@ticket.id).title
-    assert_redirected_to ticket_path(assigns(:ticket))
+    assert_redirected_to admin_ticket_path(assigns(:ticket))
   end
 
 
@@ -45,7 +45,7 @@ class TicketsControllerTest < ActionController::TestCase
     assert_difference('Ticket.count', -1) do
       delete :destroy, id: @ticket
     end
-    assert_redirected_to tickets_path
+    assert_redirected_to admin_tickets_path
   end
 
 end
