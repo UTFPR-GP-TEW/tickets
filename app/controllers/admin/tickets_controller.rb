@@ -10,6 +10,8 @@ class Admin::TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.json
   def show
+    @conversation = Conversation.new
+    @conversations = @ticket.conversations
   end
 
   # GET /tickets/new
