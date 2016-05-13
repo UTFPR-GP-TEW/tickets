@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 <div class="ui grid centered">
-  <div class="ten wide column">
+  <div class="forteen wide column">
 
-    <div class="ui card">
+    <div class="ui segment">
       <div class="content">
         <div class="header">
           <strong>Título:</strong>
@@ -14,12 +14,13 @@
           <%= @ticket.description %>
         </div>
       </div>
-      <!--<div class="extra content">
-        <div class="ui two buttons">
-          <div class="ui basic green button">Approve</div>
-          <div class="ui basic red button">Decline</div>
-        </div>
-      </div>-->
+
+      <div id="conversation-form">
+        <%= render 'conversations/form' %>
+      </div>
+      <div id="conversation-list">
+        <%= render 'conversations/show'%>
+      </div>
     </div>
 
     <div class="ui compact menu">
