@@ -1,0 +1,28 @@
+<% if @conversations.size > 0 %>
+    <p id="notice"><%= notice %></p>
+    <div class="ui comments">
+      <h3 class="header">Comentários</h3>
+    <% @conversations.each do |conversation| %>
+      <hr class="ui dividing">
+      <div class="comment">
+        <!--<a class="avatar">
+          <img src="/images/avatar/small/matt.jpg">
+        </a>-->
+        <div class="content">
+          <!--<a class="author"></a>-->
+          <div class="metadata">
+            <span class="date"><%= conversation.created_at%></span>
+          </div>
+          <div class="text">
+            <%= conversation.content %>
+          </div>
+          <div class="actions">
+            <!--<a class="reply">Reply</a>-->
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+<% else %>
+    <p>Ainda não há histórico de conversas neste Ticket</p>
+<% end%>
