@@ -6,4 +6,10 @@ class HomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get index logged in" do
+  	sign_in users(:User1)
+    get :index
+    assert_response :success
+  end
+
 end
