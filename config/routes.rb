@@ -12,6 +12,13 @@ Rails.application.routes.draw do
     resources :projects
     root 'home#index'
   end
+
+  namespace :api do
+    namespace :v1, path: '/' do
+      resources :tickets
+    end
+  end
+
   get 'home/index'
 
   root 'home#index'
