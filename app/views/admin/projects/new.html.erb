@@ -1,5 +1,13 @@
-<h1>New Project</h1>
+<div class="ui grid centered">
+  <div class="ten wide column">
+    <br>
+    <h1>Novo Projeto</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to 'Back', admin_projects_path %>
+    <div class="ui compact menu">
+      <%= link_to '<i class="arrow left icon"></i> voltar'.html_safe, admin_projects_path, class: 'item' %>
+    </div>
+  </div>
+</div>
+
