@@ -5,13 +5,13 @@ class ConversationTest < ActiveSupport::TestCase
     @ticket = tickets(:one)
     
     assert_difference('Conversation.count', 1) do
-      Conversation.create content: 'test', ticket: @ticket
+      Conversation.create content: 'test content', ticket: @ticket
     end
   end
 
   test "should not commennt create without ticket" do
     assert_difference('Conversation.count', 0) do
-      Conversation.create content: 'test'
+      Conversation.create content: 'test content'
     end
   end
 
