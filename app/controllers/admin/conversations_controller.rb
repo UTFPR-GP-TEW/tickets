@@ -3,6 +3,7 @@ class Admin::ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.new(conversation_params)
+
     if @conversation.save
       @conversations =  Conversation.where(ticket_id: @conversation.ticket.id)
       render :show

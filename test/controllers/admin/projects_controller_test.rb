@@ -3,6 +3,7 @@ require 'test_helper'
 class Admin::ProjectsControllerTest < ActionController::TestCase
   setup do
     @project = projects(:Project_1)
+    sign_in users(:User1)
   end
 
   test "should get index" do
