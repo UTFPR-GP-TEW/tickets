@@ -1,4 +1,4 @@
-class ConversationsController < ApplicationController
+class Admin::ConversationsController < ApplicationController
   before_action :set_conversation, only: [:update, :destroy]
 
   def create

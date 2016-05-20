@@ -1,5 +1,5 @@
 class Api::V1::TicketsController < ApplicationController
-  before_action :set_ticket, only: [:show, :update, :destroy]
+  before_action :set_ticket, only: [:show, :update, :destroy, :conversations]
 
   def index
     tickets = Ticket.all
@@ -10,13 +10,17 @@ class Api::V1::TicketsController < ApplicationController
   end
 
   def show
-    render json: @ticket, status: 200
+    render json: @ticket.to_json(include: :conversations), status: 200
+  end
+
+  def conversations
+    render json: @ticket.conversations, status: 200
   end
 
   def create
     ticket = Ticket.new(ticket_params)
     if ticket.save
-      render json: ticket, status: :created, location: ticket
+      render json: ticket, status: :created, location: [:admin, ticket]
     else
       render json: ticket.errors, status: :unprocessable_entity
     end
