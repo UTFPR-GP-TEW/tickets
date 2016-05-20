@@ -5,7 +5,16 @@ env:
     - TRAVIS=true
 rvm:
   - 2.2
-#script: "bundle exec rake $TASK --trace"
 notifications:
   email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: cOPW0+fwUjX1DsZMLnVWP79T9+9egb9ViZOmVQrtzsAUi6VqbIPNfCPv2mODneX/ozrqAAQECHP69aaQPFvmG6t6hV0WlrUTOnV+EUB9gIi8/UXodYD6iyreFuq2sMe33WactnUPJmjFqklbvR8SNca+FRGx+vcSfPtStDZCnNRaNN28Zt6CkpDx6180ZZ05ppUltMDFsXeyR+H69H3YMyR2YlYGIU9uEurc5BpqyklTKImrCBDx5tiG0LATIs97h56iBlmAEd3Ehjplv5ZXn3N4Ai/KTgIW19m26YmhG9d0DTEErz0g7efahgLAng0Oj3tLi6XxODFIhhHvw8Vrp8VHq44CbHzF2jrf9dOMN5C51Hh+ecPw1LFvzbw78XX18ZZpLvJrwr7ln/ht1wajk/n7fmOgImY5j/Xket5sEl5k0+orPTCvL+2qc/4JCnp8/D3RMM98ROp6DU1VvDrMbjPhqPHClM7SSAbn4PjqC9jovyknonNmggL6VF9wEXPAami8UPUYoUbE5qUxWjA1bn826ULvI8zuaZQag1rp3dC9e/mrIWxU6ItF6Ld5f0m9G90gfRkHowht6dIJbQ3kA4hSgoQdXXBa/i0qqaqqvQ9nG6KwkKmd5Ix13RJ3G5UwuiXood6TCbI8KTyvDDi0pHnJLcr6d5A4VKojOWqfJRg=
+  app:
+    master: tew-tickets
+  run:
+  - "rake db:migrate"
+  - restart
+  - "rake cleanup"
 
