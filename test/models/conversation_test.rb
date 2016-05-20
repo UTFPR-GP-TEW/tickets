@@ -1,10 +1,18 @@
 require 'test_helper'
-
 class ConversationTest < ActiveSupport::TestCase
-  def setup
-    @conversation = conversation(:one)
+
+  test "should create conversation" do
+    @ticket = tickets(:one)
+    
+    assert_difference('Conversation.count', 1) do
+      Conversation.create content: 'test content', ticket: @ticket
+    end
   end
 
-  # TODO
+  test "should not commennt create without ticket" do
+    assert_difference('Conversation.count', 0) do
+      Conversation.create content: 'test content'
+    end
+  end
 
 end
