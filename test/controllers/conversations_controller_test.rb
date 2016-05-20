@@ -17,7 +17,7 @@ class ConversationsControllerTest < ActionController::TestCase
     assert_difference('Conversation.count', 1) do
 
       # Simulate a POST response with the given HTTP parameters.
-      post(:create, conversation: { content: 'Love Hina', ticket_id: @ticket }, format: :xwr)
+      post :create, conversation: { content: 'I Love Hina. You Love Hina. We loves Hine.', ticket_id: @ticket }, format: :xwr
     end
 
     # assert_response :sons
