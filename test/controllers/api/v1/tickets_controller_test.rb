@@ -1,7 +1,6 @@
 require 'test_helper'
 
-class Api::TicketsControllerTest < ActionController::TestCase
-=begin
+class Api::V1::TicketsControllerTest < ActionController::TestCase
   setup do
     @ticket = tickets(:one)
   end
@@ -21,17 +20,25 @@ class Api::TicketsControllerTest < ActionController::TestCase
   end
 
   test "should show ticket" do
-    get :show, id: @ticket
+    get :show, id: @ticket.id
     assert_equal 200, response.status
 
-    ticket_response = json(response.body)
-    assert_equal ticket.name, ticket_response[:title]
+    ticket_response = JSON(response.body)
+    assert_equal @ticket.title, ticket_response["title"]
   end
 
   test "should update ticket" do
     patch :update, id: @ticket, ticket: { description: @ticket.description, title: 'Update Ticket', status: 'aberto', project_id: 1}
     assert_equal 'Update Ticket', Ticket.find(@ticket.id).title
     assert_equal 200, response.status
+  end
+
+  test "should conversations ticket" do
+    get :conversations, id: @ticket.id
+    assert_equal 200, response.status
+
+    ticket_response = JSON(response.body)
+    assert_equal @ticket.conversations.size, 0
   end
 
 
@@ -41,6 +48,5 @@ class Api::TicketsControllerTest < ActionController::TestCase
     end
     assert_equal 204, response.status
   end
-=end
 
 end
