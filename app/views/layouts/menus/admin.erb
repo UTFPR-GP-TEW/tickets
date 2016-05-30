@@ -1,10 +1,10 @@
 <header>
     <div class="ui menu black inverted segment">
         <div class="ui container">
-            <a class="item">
-                <i class="home icon"></i>
-                Home
-            </a>
+            <%= link_to root_path, class: 'item'  do %>
+            <i class="home icon"></i>
+            Home
+            <% end %>
 
             <%= link_to admin_tickets_path, class: 'item'  do %>
             <i class="ticket icon"></i>

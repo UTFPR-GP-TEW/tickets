@@ -25,6 +25,22 @@ body{
             margin-left: 84px !important;
         }
     }
+    .notice, .alert{
+        padding: 10px 20px;
+        
+        margin: 10px 0;
+        
+    }
+    .notice{
+        border: 1px solid #016936;
+        color: #016936;
+        background-color: rgba(1,105,54, 0.1);
+    }
+    .alert{
+        border: 1px solid #D01919;
+        color: #D01919;
+        background-color: rgba(208,25,25,0.1);
+    }
     main{
         overflow-x: hidden;
         min-height: calc(100vh - 144px);

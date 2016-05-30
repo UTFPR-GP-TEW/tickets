@@ -1,44 +1,44 @@
 require 'test_helper'
 
-class Admin::TicketsControllerTest < ActionController::TestCase
+class Api::V1::TicketsControllerTest < ActionController::TestCase
   setup do
     @ticket = tickets(:one)
-    sign_in users(:User1)
   end
 
   test "should get index" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:tickets)
+    assert_equal 200, response.status
+    refute_empty response.body
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should create ticket" do
     assert_difference('Ticket.count') do
       post :create, ticket: { description: @ticket.description, title: @ticket.title, status: 'aberto', project_id: 1}
     end
-
-    assert_redirected_to admin_ticket_path(assigns(:ticket))
+    assert_equal 201, response.status
   end
 
   test "should show ticket" do
-    get :show, id: @ticket
-    assert_response :success
-  end
+    get :show, id: @ticket.id
+    assert_equal 200, response.status
 
-  test "should get edit" do
-    get :edit, id: @ticket
-    assert_response :success
+    ticket_response = JSON(response.body)
+    assert_equal @ticket.title, ticket_response["title"]
   end
 
   test "should update ticket" do
     patch :update, id: @ticket, ticket: { description: @ticket.description, title: 'Update Ticket', status: 'aberto', project_id: 1}
     assert_equal 'Update Ticket', Ticket.find(@ticket.id).title
-    assert_redirected_to admin_ticket_path(assigns(:ticket))
+    assert_equal 200, response.status
+  end
+
+  test "should conversations ticket" do
+    get :conversations, id: @ticket.id
+    assert_equal 200, response.status
+
+    ticket_response = JSON(response.body)
+    assert_equal @ticket.conversations.size, 0
   end
 
 
@@ -46,7 +46,7 @@ class Admin::TicketsControllerTest < ActionController::TestCase
     assert_difference('Ticket.count', -1) do
       delete :destroy, id: @ticket
     end
-    assert_redirected_to admin_tickets_path
+    assert_equal 204, response.status
   end
 
 end
