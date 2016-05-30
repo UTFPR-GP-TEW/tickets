@@ -2,7 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 if ENV['SIMPLECOV'] == 'simplecov'
   require 'simplecov'
-  SimpleCov.start
+  SimpleCov.start 'rails'
 else
   require 'coveralls'
   Coveralls.wear!('rails')
