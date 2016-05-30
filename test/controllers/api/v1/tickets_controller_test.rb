@@ -11,12 +11,22 @@ class Api::V1::TicketsControllerTest < ActionController::TestCase
     refute_empty response.body
   end
 
+  test "should get index with status" do
+    get :index, status: :aberto
+    assert_equal 200, response.status
+    refute_empty response.body
+  end
 
   test "should create ticket" do
     assert_difference('Ticket.count') do
       post :create, ticket: { description: @ticket.description, title: @ticket.title, status: 'aberto', project_id: 1}
     end
     assert_equal 201, response.status
+  end
+
+  test "should not create ticket" do
+    post :create, ticket: { description: "", status: 'aberto', project_id: nil}
+    assert_equal 422, response.status
   end
 
   test "should show ticket" do
@@ -31,6 +41,11 @@ class Api::V1::TicketsControllerTest < ActionController::TestCase
     patch :update, id: @ticket, ticket: { description: @ticket.description, title: 'Update Ticket', status: 'aberto', project_id: 1}
     assert_equal 'Update Ticket', Ticket.find(@ticket.id).title
     assert_equal 200, response.status
+  end
+
+  test "should not update ticket" do
+    patch :update, id: @ticket, ticket: { description: "", title: '', status: 'aberto', project_id: nil}
+    assert_equal 422, response.status
   end
 
   test "should conversations ticket" do

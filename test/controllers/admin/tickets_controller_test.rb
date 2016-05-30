@@ -25,6 +25,11 @@ class Admin::TicketsControllerTest < ActionController::TestCase
     assert_redirected_to admin_ticket_path(assigns(:ticket))
   end
 
+  test "should not create ticket" do
+    post :create, ticket: { description: "", title: "", status: 'aberto', project_id: nil}
+    assert_template :new
+  end
+
   test "should show ticket" do
     get :show, id: @ticket
     assert_response :success
@@ -41,6 +46,10 @@ class Admin::TicketsControllerTest < ActionController::TestCase
     assert_redirected_to admin_ticket_path(assigns(:ticket))
   end
 
+  test "should not update ticket" do
+    patch :update, id: @ticket, ticket: { description: '', title: '', status: 'aberto', project_id: nil}
+    assert_template :edit
+  end
 
   test "should destroy ticket" do
     assert_difference('Ticket.count', -1) do
