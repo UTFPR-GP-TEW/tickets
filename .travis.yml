@@ -1,5 +1,8 @@
 language: ruby
 cache: bundler
+addons:
+  code_climate:
+    repo_token: 79db80da534e26d560511e5ae9aaa076b9b11383fa9ec8b7fd5c224b669d6de8
 env:
   global:
     - TRAVIS=true
