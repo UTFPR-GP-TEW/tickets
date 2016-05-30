@@ -14,13 +14,16 @@ class Admin::ConversationsControllerTest < ActionController::TestCase
 
   test "should add conversation" do
     @ticket = tickets :one
-
     assert_difference('Conversation.count', 1) do
-
       # Simulate a POST response with the given HTTP parameters.
       post :create, conversation: { content: 'I Love Hina. You Love Hina. We loves Hine.', ticket_id: @ticket }, format: :xwr
     end
-
-    # assert_response :sons
   end
+
+  test "should not add conversation" do
+    @ticket = tickets :one
+    post :create, conversation: { content: '', ticket_id: @ticket }, format: :xwr
+    assert_template :failure
+  end
+
 end

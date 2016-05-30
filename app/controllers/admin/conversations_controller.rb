@@ -12,18 +12,6 @@ class Admin::ConversationsController < ApplicationController
     end
   end
 
-  def update
-    respond_to do |format|
-      if @conversation.update(conversation_params)
-        format.html { redirect_to @conversation, notice: 'Conversation was successfully updated.' }
-        format.json { render :show, status: :ok, location: @conversation }
-      else
-        format.html { render :edit }
-        format.json { render json: @conversation.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def destroy
     @conversation.destroy
     respond_to do |format|
