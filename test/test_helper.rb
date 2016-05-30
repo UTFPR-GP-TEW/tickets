@@ -1,7 +1,13 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
-require 'coveralls'
-Coveralls.wear!('rails')
+if ENV['SIMPLECOV'] == 'simplecov'
+  require 'simplecov'
+  SimpleCov.start
+else
+  require 'coveralls'
+  Coveralls.wear!('rails')
+end
+
 require 'rails/test_help'
 
 class ActionController::TestCase
