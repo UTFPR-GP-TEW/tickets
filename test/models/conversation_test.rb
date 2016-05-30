@@ -15,4 +15,11 @@ class ConversationTest < ActiveSupport::TestCase
     end
   end
 
+  test "should not conversation create without content" do
+    @ticket = tickets(:one)
+
+    assert_difference('Conversation.count', 0) do
+      Conversation.create ticket: @ticket
+    end
+  end
 end
