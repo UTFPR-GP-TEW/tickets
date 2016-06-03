@@ -25,6 +25,11 @@ class Admin::ProjectsControllerTest < ActionController::TestCase
     assert_redirected_to admin_project_path(assigns(:project))
   end
 
+  test "should not create project" do
+    post :create, project: { description: '', name: '', user_id: 1 }
+    assert_template :new
+  end
+
   test "should show project" do
     get :show, id: @project
     assert_response :success
@@ -39,6 +44,11 @@ class Admin::ProjectsControllerTest < ActionController::TestCase
     patch :update, id: @project, project: { name: 'Project Changed' }
     assert_equal 'Project Changed', Project.find(@project.id).name
     assert_redirected_to admin_project_path(assigns(:project))
+  end
+
+  test "should not update project" do
+    patch :update, id: @project, project: { name: '' }
+    assert_template :edit
   end
 
   test "should destroy project" do

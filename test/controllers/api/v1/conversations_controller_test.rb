@@ -19,6 +19,11 @@ class Api::V1::ConversationsControllerTest < ActionController::TestCase
     assert_equal 201, response.status
   end
 
+  test "should not create conversation" do
+    post :create, conversation: { content: "", ticket_id: nil}
+    assert_equal 422, response.status
+  end
+
   test "should show conversation" do
     get :show, id: @conversation.id
     assert_equal 200, response.status
@@ -31,6 +36,11 @@ class Api::V1::ConversationsControllerTest < ActionController::TestCase
     patch :update, id: @conversation, conversation: { content: 'Update Conversation Teste', ticket_id: 1}
     assert_equal 'Update Conversation Teste', Conversation.find(@conversation.id).content
     assert_equal 200, response.status
+  end
+
+  test "should not update conversation" do
+    patch :update, id: @conversation, conversation: { content: "", ticket_id: nil}
+    assert_equal 422, response.status
   end
 
   test "should destroy conversation" do
