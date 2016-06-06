@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
   namespace :admin do
     resources :tickets
     resources :projects
@@ -24,10 +23,8 @@ Rails.application.routes.draw do
     end
   end
 
-  devise_for :users
+  root "home#index"
 
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+  devise_for :users
 
 end
