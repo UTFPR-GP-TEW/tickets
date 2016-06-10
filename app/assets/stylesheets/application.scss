@@ -1,3 +1,5 @@
+@import "semantic-ui";
+@import 'semantic-ui/modules/popup';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,11 +16,9 @@
  *= require_self
  */
 
-@import "semantic-ui";
-@import 'semantic-ui/modules/popup';
-
 
 body{
+    background: #f3f3f3;
     header{
         .secondary{
             margin-top: 0 !important;
@@ -44,6 +44,38 @@ body{
     main{
         overflow-x: hidden;
         min-height: calc(100vh - 144px);
+        .box{
+          background: white;
+          margin: 50px 0 100px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.29);
+          background-color: white;
+          padding: 20px;
+          h1{
+            text-align: center;
+            margin-top: -10px;
+          }
+          form
+            input#user_remember_me{
+              margin-top: 5px;
+            }
+            label.remember-label{
+              display: inline-block!important;
+            }
+            .center{
+              text-align: center;
+              .actions{
+                input{
+                  width: 100%;
+                }
+              }
+              a{
+                color: black;
+                margin-top: 13px;
+                display: block;
+              }
+            }
+        }
     }
     footer{
         margin-left: 84px;
