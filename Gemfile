@@ -70,3 +70,6 @@ group :production do
   gem 'pg', '~> 0.18.4'
 end
 
+gem 'faye', '~> 1.1', '>= 1.1.2'
+gem 'render_sync', '~> 0.5.0'
+gem 'thin', '~> 1.7'
