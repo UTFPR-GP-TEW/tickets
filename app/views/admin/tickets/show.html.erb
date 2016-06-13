@@ -8,11 +8,20 @@
           <strong>Título:</strong>
           <%= @ticket.title %>
         </div>
+        <br>
         <div class="description">
           <strong>Descrição:</strong>
           <br>
           <%= @ticket.description %>
         </div>
+        <br>
+        <% unless @ticket.project.blank? %>
+          <div class="description">
+            <strong>Projeto:</strong>
+            <br>
+            <%= @ticket.project.name %>
+          </div>
+        <% end %>
       </div>
 
       <div id="conversation-form">
