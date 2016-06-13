@@ -1,0 +1,14 @@
+<tr>
+  <td>
+    <div class="ui ribbon label"><%= ticket.id %></div>
+  </td>
+  <td><%= ticket.title %></td>
+  <td><%= ticket.description %></td>
+  <td class="center aligned">
+    <div class="ui compact menu">
+      <%= link_to '<i class="unhide icon"></i> ver'.html_safe, admin_ticket_path(ticket), class: 'item', data: {content: 'Add users to your feed'} %>
+      <%= link_to '<i class="write icon"></i> editar'.html_safe, edit_admin_ticket_path(ticket), class: 'item', data:{content: 'Add users to your feed'} %>
+      <%= link_to '<i class="remove icon"></i> excluir'.html_safe, admin_ticket_path(ticket), method: :delete, data: { confirm: 'Are you sure?', content: 'Add users to your feed' }, class: 'item' %>
+    </div>
+  </td>
+</tr>

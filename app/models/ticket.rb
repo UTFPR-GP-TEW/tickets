@@ -1,4 +1,5 @@
 class Ticket < ActiveRecord::Base
+  sync :all
   #Enum
   enum status: {  aberto: 0 , fechado: 1, em_andamento: 2, aguardando_visto: 3, cancelado: 4}
 

@@ -10,6 +10,8 @@ if [ "$1" == "" ] ; then
   # --name https://docs.docker.com/engine/reference/run/#name-name
   # -p https://docs.docker.com/engine/reference/run/#expose-incoming-ports
   docker run --rm -itP --name tickets_web --user=1000:1000 -p 3000:3000 -v $DIR:/app $IMAGE
+elif [ "$1" == "sync" ] ; then
+  docker run --rm -it --name tickets_sync --user=1000:1000 -p 9292:9292 -v $DIR:/app $IMAGE rackup sync.ru -E production -s thin -o 0.0.0.0
 else
   # --rm https://docs.docker.com/engine/reference/run/#clean-up-rm
   # -it https://docs.docker.com/engine/reference/run/#foreground

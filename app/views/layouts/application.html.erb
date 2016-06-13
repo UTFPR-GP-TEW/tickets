@@ -9,6 +9,8 @@
 
 <body>
 
+    <%= include_sync_config %>
+
     <% if user_signed_in? %>
         <%= render file: 'layouts/menus/admin' %>
     <% else %>
