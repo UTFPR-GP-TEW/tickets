@@ -27,9 +27,9 @@ body{
     }
     .notice, .alert{
         padding: 10px 20px;
-        
+
         margin: 10px 0;
-        
+
     }
     .notice{
         border: 1px solid #016936;
@@ -43,7 +43,10 @@ body{
     }
     main{
         overflow-x: hidden;
-        min-height: calc(100vh - 144px);
+        min-height: calc(100vh - 138px);
+        .ui.grid{
+          margin: 0 !important;
+        }
         .box{
           background: white;
           margin: 50px 0 100px;
