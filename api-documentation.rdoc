@@ -1,0 +1,32 @@
+== DOCUMENTAÇÃO API
+
+Abaixo estão disponíveis métodos de chamada à API da aplicação de Tickets, para a obtenção de informações.
+
+==== Estrutura das requisições:
+
+* Todas as respostas são em formato JSON.
+
+* Requisições GET:
+
+* url-base/api/tickets/ - Retorna um JSON de todos os tickets cadastrados.
+* url-base/api/tickets/:id/ - Retorna um JSON de um determidado Ticket.
+* url-base/api/tickets/:id/conversations/ - Retorna um JSON de todos os comentários de um determinado Ticket.
+* url-base/api/tickets/conversations/ - Retorna um JSON com todos os comentários cadastrados.
+* url-base/api/tickets/conversations/:id/ - Retorna um JSON de um determinado Comentário.
+
+* Requisições POST
+
+* url-base/api/tickets - Cria um novo Ticket.
+* url-base/api/conversations - Cria um novo Comentário.
+
+* Requisições PUT/PATCH
+
+* url-base/api/tickets/:id/ - Edita um Ticket.
+* url-base/api/conversations/:id/ - Edita um Comentário.
+
+* Requisições DELETE
+
+* url-base/api/tickets/:id/ - Exclui determinado Ticket.
+* url-base/api/conversations/:id/ - Exclui determinado Ticket.
+
+* url-base/api/tickets - Cria um novo Ticket.
