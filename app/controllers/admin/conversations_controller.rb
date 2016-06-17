@@ -1,5 +1,6 @@
 class Admin::ConversationsController < ApplicationController
   before_action :set_conversation, only: [:update, :destroy]
+  enable_sync only: [:create, :update, :destroy]
 
   def create
     @conversation = Conversation.new(conversation_params)
