@@ -27,8 +27,9 @@ test:
   async: false
 
 production:
-  server: "http://172.17.0.1:9292/faye"
-  adapter_javascript_url: "http://172.17.0.1:9292/faye/faye.js"
-  adapter: "Faye"
-  auth_token: "82a30b8e618269fa45f6ff75ca5eb19843952a0fb3965fda13ab0d98285c9e4c"
+  adapter_javascript_url: "http://js.pusher.com/2.0/pusher.min.js"
+  adapter: "Pusher"
+  app_id: "ENV['PUSHER_APP_ID']"
+  api_key: "ENV['PUSHER_API_KEY']"
+  auth_token: "ENV['PUSHER_SECRET']"
   async: true
