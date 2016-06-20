@@ -1,5 +1,4 @@
 class Ticket < ActiveRecord::Base
-<<<<<<< HEAD
   #ElastickSearch
   searchkick
   # Realtime
