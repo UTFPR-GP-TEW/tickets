@@ -70,7 +70,6 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     docile (1.1.5)
-
     elasticsearch (1.0.17)
       elasticsearch-api (= 1.0.17)
       elasticsearch-transport (= 1.0.17)
