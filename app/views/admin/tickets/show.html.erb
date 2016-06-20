@@ -28,7 +28,13 @@
         <%= render 'admin/conversations/form' %>
       </div>
       <div id="conversation-list">
-        <%= render 'admin/conversations/show'%>
+        <div class="ui comments">
+          <h3 class="header">Comentários</h3>
+          <% @conversations.each do |conversation| %>
+            <%= sync partial: 'conversation_row', resource: conversation %>
+            <% end %>
+          <%= sync_new partial: "conversation_row", resource: Conversation.new %>
+        </div>
       </div>
     </div>
 
