@@ -36,6 +36,10 @@ gem 'semantic-ui-sass', '~> 2.1', '>= 2.1.8.0'
 # Has Secure Token
 gem 'has_secure_token', '~> 1.0'
 
+# Pusher
+
+gem 'pusher'
+
 group :test do
   gem 'pullreview-coverage', require: false
 end
