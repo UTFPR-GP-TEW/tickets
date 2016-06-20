@@ -1,4 +1,5 @@
 class Conversation < ActiveRecord::Base
+  sync :all
 
   #Association
   belongs_to :ticket

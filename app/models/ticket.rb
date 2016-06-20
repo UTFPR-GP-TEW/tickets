@@ -1,6 +1,10 @@
 class Ticket < ActiveRecord::Base
+<<<<<<< HEAD
   #ElastickSearch
   searchkick
+  # Realtime
+  sync :all
+
   #Enum
   enum status: {  aberto: 0 , fechado: 1, em_andamento: 2, aguardando_visto: 3, cancelado: 4}
 

@@ -36,8 +36,12 @@ gem 'semantic-ui-sass', '~> 2.1', '>= 2.1.8.0'
 # Has Secure Token
 gem 'has_secure_token', '~> 1.0'
 
+
 #ElasticSearch
 gem "searchkick"
+
+# Pusher
+gem 'pusher'
 
 group :test do
   gem 'pullreview-coverage', require: false
@@ -73,3 +77,6 @@ group :production do
   gem 'pg', '~> 0.18.4'
 end
 
+gem 'faye', '~> 1.1', '>= 1.1.2'
+gem 'render_sync', '~> 0.5.0'
+gem 'thin', '~> 1.7'

@@ -1,6 +1,7 @@
 class Admin::TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  enable_sync only: [:create, :update, :destroy]
 
   # GET /tickets
   # GET /tickets.json
