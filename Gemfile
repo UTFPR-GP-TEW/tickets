@@ -38,7 +38,7 @@ gem 'has_secure_token', '~> 1.0'
 
 
 #ElasticSearch
-gem "searchkick"
+gem 'searchkick'
 
 # Pusher
 gem 'pusher'
