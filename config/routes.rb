@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   namespace :admin do
-    resources :tickets
+    resources :tickets do
+      collection do
+        post 'search' => 'tickets#search', as: :search_tickets
+      end
+    end
     resources :projects
     resources :conversations
     root 'home#index'

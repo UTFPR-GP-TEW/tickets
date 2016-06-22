@@ -36,8 +36,11 @@ gem 'semantic-ui-sass', '~> 2.1', '>= 2.1.8.0'
 # Has Secure Token
 gem 'has_secure_token', '~> 1.0'
 
-# Pusher
 
+#ElasticSearch
+gem 'searchkick'
+
+# Pusher
 gem 'pusher'
 
 group :test do

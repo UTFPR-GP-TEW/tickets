@@ -5,23 +5,10 @@
       <div class="six wide column"><h1>Tickets</h1></div>
       <div class="six wide column right floated"><%= link_to '<i class="plus icon"></i> Novo Ticket'.html_safe, new_admin_ticket_path, class: 'ui secondary button right floated' %></div>
     </div>
+    <%= render "search" %>
 
-    <table class="ui celled table">
-      <thead>
-        <tr class="center aligned">
-          <th>#ID</th>
-          <th>Titulo</th>
-          <th>Descrição</th>
-          <th colspan="3"> Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @tickets.each do |ticket| %>
-          <%= sync partial: 'ticket_row', resource: ticket %>
-        <% end %>
-        <%= sync_new partial: "ticket_row", resource: Ticket.new %>
-      </tbody>
-    </table>
+    <%= render "list_tickets"%>
+
   </div>
   <div class="ten wide column">
     <%= link_to '<i class="plus icon"></i> Novo Ticket'.html_safe, new_admin_ticket_path, class: 'ui secondary button' %>

@@ -1,0 +1,14 @@
+<%= form_tag search_tickets_admin_tickets_path, method: :post  do %>
+  <div class="ui form">
+    <div class="field">
+      <label><%= label :q, "Buscar" %></label>
+      <%= text_field_tag :q, params[:q] ,class: 'ui input' %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Buscar",class: 'ui secondary button right floated' %>
+    </div>
+  </div>
+<% end %>
+<br><br>
+<hr>
