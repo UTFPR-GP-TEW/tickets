@@ -32,12 +32,20 @@
               <i class="empty star icon grey"></i>
             <% end %>
             <br><br>
-            <%if @ticket.comment.empty? %>
+            <%if @ticket.comment? %>
               <strong>Comentário sobre a Avaliação:</strong>
               <% @ticket.comment %>
             <% else %>
               <span>Não há comentário sobre a avaliação.</span>
             <% end %>
+            <br><br>
+          </div>
+        <% end %>
+        <% unless @ticket.project.blank? %>
+          <div class="description">
+            <strong>Projeto:</strong>
+            <br>
+            <%= @ticket.project.name %>
           </div>
         <% end %>
       </div>
@@ -46,7 +54,13 @@
         <%= render 'admin/conversations/form' %>
       </div>
       <div id="conversation-list">
-        <%= render 'admin/conversations/show'%>
+        <div class="ui comments">
+          <h3 class="header">Comentários</h3>
+          <% @conversations.each do |conversation| %>
+            <%= sync partial: 'conversation_row', resource: conversation %>
+            <% end %>
+          <%= sync_new partial: "conversation_row", resource: Conversation.new %>
+        </div>
       </div>
     </div>
 

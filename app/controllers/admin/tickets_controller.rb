@@ -16,6 +16,10 @@ class Admin::TicketsController < ApplicationController
     @conversations = @ticket.conversations
   end
 
+  def search
+    @tickets = Ticket.search params[:q]
+  end
+
   # GET /tickets/new
   def new
     @ticket = Ticket.new

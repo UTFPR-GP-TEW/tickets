@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<div class="ui grid centered">
+  <div class="ten wide column">
+    <div class="ui grid">
+      <div class="six wide column"><h1>Tickets</h1></div>
+      <div class="six wide column right floated"><%= link_to '<i class="reply icon"></i> Voltar'.html_safe, admin_tickets_path, class: 'ui secondary button right floated' %></div>
+    </div>
+    <%= render "search" %>
+
+    <%= render "list_tickets"%>
+  </div>
+  <div class="ten wide column">
+    <%= link_to '<i class="reply icon"></i> Voltar'.html_safe, admin_tickets_path, class: 'ui secondary button' %>
+  </div>
+</div>
