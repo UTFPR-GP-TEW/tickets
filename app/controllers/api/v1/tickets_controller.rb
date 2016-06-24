@@ -1,13 +1,13 @@
-class Api::V1::TicketsController < ApplicationController
+class Api::V1::TicketsController < Api::ApiController
   before_action :set_ticket, only: [:show, :update, :destroy, :conversations]
 
-  def index
-    tickets = Ticket.all
-    if status = params[:status]
-      tickets = tickets.where(status: status)
-    end
-    render json: tickets, status: 200
-  end
+  #def index
+  #  tickets = Ticket.all
+  #  if status = params[:status]
+  #    tickets = tickets.where(status: status)
+  #  end
+  #  render json: tickets, status: 200
+  #end
 
   def show
     render json: @ticket.to_json(include: :conversations), status: 200

@@ -20,10 +20,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1, path: '/' do
-      resources :tickets do
+      resources :tickets, only: [:create, :update, :destroy, :conversations] do
         get :conversations, on: :member
       end
-      resources :conversations
+
+      # resources :conversations, only: [:show, :edit, :update, :destroy]
     end
   end
 

@@ -1,11 +1,11 @@
-class Api::V1::ConversationsController < ApplicationController
+class Api::V1::ConversationsController < Api::ApiController
 
   before_action :set_conversation, only: [:show, :update, :destroy]
 
-  def index
-    conversations = Conversation.all
-    render json: conversations, status: 200
-  end
+  #def index
+  #  conversations = Conversation.all
+  #  render json: conversations, status: 200
+  #end
 
   def show
     render json: @conversation, status: 200
@@ -32,7 +32,9 @@ class Api::V1::ConversationsController < ApplicationController
     @conversation.destroy
     head 204
   end
+  
   private
+
   def conversation_params
     params.require(:conversation).permit(:content, :ticket_id)
   end
