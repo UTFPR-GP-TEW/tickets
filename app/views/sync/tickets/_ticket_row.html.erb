@@ -4,6 +4,7 @@
   </td>
   <td><%= ticket.title %></td>
   <td><%= ticket.description %></td>
+  <td><%= ticket.status %></td>
   <td class="center aligned">
     <div class="ui compact menu">
       <%= link_to '<i class="unhide icon"></i> ver'.html_safe, admin_ticket_path(ticket), class: 'item', data: {content: 'Add users to your feed'} %>

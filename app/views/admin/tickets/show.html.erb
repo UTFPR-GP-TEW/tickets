@@ -8,11 +8,38 @@
           <strong>Título:</strong>
           <%= @ticket.title %>
         </div>
+        <br>
         <div class="description">
           <strong>Descrição:</strong>
           <br>
           <%= @ticket.description %>
         </div>
+        <br>
+        <div class="description">
+          <strong>Status:</strong>
+          <br>
+          <%= @ticket.status %>
+        </div>
+        <br>
+        <% if @ticket.status == 'fechado' %>
+          <div class="">
+            <strong>Avaliação:</strong>
+            <br>
+            <% @ticket.rating.times do %>
+              <i class="star icon"></i>
+            <% end %>
+            <% (5 - @ticket.rating).times do %>
+              <i class="empty star icon grey"></i>
+            <% end %>
+            <br><br>
+            <%if @ticket.comment.empty? %>
+              <strong>Comentário sobre a Avaliação:</strong>
+              <% @ticket.comment %>
+            <% else %>
+              <span>Não há comentário sobre a avaliação.</span>
+            <% end %>
+          </div>
+        <% end %>
       </div>
 
       <div id="conversation-form">
