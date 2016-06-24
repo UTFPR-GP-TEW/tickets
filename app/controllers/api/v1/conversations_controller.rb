@@ -32,7 +32,7 @@ class Api::V1::ConversationsController < Api::ApiController
     @conversation.destroy
     head 204
   end
-  
+
   private
 
   def conversation_params
