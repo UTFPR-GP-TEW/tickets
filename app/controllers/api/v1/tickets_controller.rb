@@ -45,6 +45,6 @@ class Api::V1::TicketsController < ApplicationController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:title, :description, :project_id, :status)
+    params.require(:ticket).permit(:title, :description, :project_id, :status, :rating, :comment)
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502231322) do
+ActiveRecord::Schema.define(version: 20160624221242) do
 
   create_table "conversations", force: :cascade do |t|
     t.text     "content",    null: false
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20160502231322) do
     t.datetime "updated_at",              null: false
     t.integer  "project_id"
     t.integer  "status",      default: 0
+    t.integer  "rating",      default: 0
+    t.string   "comment"
   end
 
   add_index "tickets", ["project_id"], name: "index_tickets_on_project_id"

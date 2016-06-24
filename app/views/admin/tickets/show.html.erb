@@ -15,6 +15,32 @@
           <%= @ticket.description %>
         </div>
         <br>
+        <div class="description">
+          <strong>Status:</strong>
+          <br>
+          <%= @ticket.status %>
+        </div>
+        <br>
+        <% if @ticket.status == 'fechado' %>
+          <div class="">
+            <strong>Avaliação:</strong>
+            <br>
+            <% @ticket.rating.times do %>
+              <i class="star icon"></i>
+            <% end %>
+            <% (5 - @ticket.rating).times do %>
+              <i class="empty star icon grey"></i>
+            <% end %>
+            <br><br>
+            <%if @ticket.comment? %>
+              <strong>Comentário sobre a Avaliação:</strong>
+              <% @ticket.comment %>
+            <% else %>
+              <span>Não há comentário sobre a avaliação.</span>
+            <% end %>
+            <br><br>
+          </div>
+        <% end %>
         <% unless @ticket.project.blank? %>
           <div class="description">
             <strong>Projeto:</strong>
