@@ -5,17 +5,17 @@ class Api::V1::TicketsControllerTest < ActionController::TestCase
     @ticket = tickets(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_equal 200, response.status
-    refute_empty response.body
-  end
+  #test "should get index" do
+  #  get :index
+  #  assert_equal 200, response.status
+  #  refute_empty response.body
+  #end
 
-  test "should get index with status" do
-    get :index, status: :aberto
-    assert_equal 200, response.status
-    refute_empty response.body
-  end
+  #test "should get index with status" do
+  #  get :index, status: :aberto
+  #  assert_equal 200, response.status
+  #  refute_empty response.body
+  #end
 
   test "should create ticket" do
     assert_difference('Ticket.count') do
@@ -29,13 +29,13 @@ class Api::V1::TicketsControllerTest < ActionController::TestCase
     assert_equal 422, response.status
   end
 
-  test "should show ticket" do
-    get :show, id: @ticket.id
-    assert_equal 200, response.status
+  #test "should show ticket" do
+  #  get :show, id: @ticket.id
+  #  assert_equal 200, response.status
 
-    ticket_response = JSON(response.body)
-    assert_equal @ticket.title, ticket_response["title"]
-  end
+#    ticket_response = JSON(response.body)
+#    assert_equal @ticket.title, ticket_response["title"]
+#  end
 
   test "should update ticket" do
     patch :update, id: @ticket, ticket: { description: @ticket.description, title: 'Update Ticket', status: 'aberto', project_id: 1}
